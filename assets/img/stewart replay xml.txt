@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<search xmlns="xmlns://vendor.transunionssi.com/vps/product/search/2005-09" xmlns:product="xmlns://vendor.transunionssi.com/vps/product/2005-09" xmlns:vps="xmlns://vendor.transunionssi.com/vps/2005-09" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="xmlns://vendor.transunionssi.com/vps/product/search/2005-09 ..\search.xsd"><product-reply><product:subcode>Q12987</product:subcode><product:loan-id>test63210</product:loan-id><product:order-number>181212-83071A</product:order-number><product:price>0</product:price><product:comments> <product:comment> </product:comment></product:comments><alert-conditions/><search-data><product:effective-date>2018-12-13</product:effective-date><product:address-variation> <vps:unit/></product:address-variation><product:deeds> <product:deed> <product:type-of-deed>Corrective Warranty Deed</product:type-of-deed><product:manner-of-title>TEST MANNER OF TITLE</product:manner-of-title><product:grantors> <product:grantor>TEST</product:grantor></product:grantors><product:grantees><product:grantee><product:ownership-type>current</product:ownership-type><product:name>TEST</product:name><product:manner-of-title>TEST MANNER OF TITLE</product:manner-of-title></product:grantee></product:grantees><product:vesting-issues>true</product:vesting-issues><product:consideration>0.00</product:consideration><product:section/><product:ward-subdivision/><product:township> </product:township><product:paper><product:document-number>65920</product:document-number><product:book>12</product:book><product:page>85</product:page><product:date-signed>2018-12-13</product:date-signed><product:date-recorded>2018-12-13</product:date-recorded><product:date-presented>2018-12-13</product:date-presented></product:paper><product:comments> </product:comments></product:deed></product:deeds><product:taxes> <product:tax> <product:ownership-type>current</product:ownership-type><product:tax-id>98562</product:tax-id><product:property-type/><product:parcel-number>98562</product:parcel-number><product:assessment-total>3.00</product:assessment-total><product:assessment-land>1.00</product:assessment-land><product:amount>1</product:amount><product:year>2005</product:year><product:paid-thru>2001-12-12</product:paid-thru><product:due-date>2010-10-10</product:due-date><product:status>Due</product:status><product:delinquent-amount>10.00</product:delinquent-amount><product:delinquent-year>2001</product:delinquent-year><product:comments> </product:comments></product:tax></product:taxes><product:mortgages> <product:mortgage> <product:mortgagors> <product:mortgagor>TEST</product:mortgagor></product:mortgagors><product:mortgagees> <product:mortgagee> <product:name>TEST</product:name></product:mortgagee></product:mortgagees><product:amount>0.00</product:amount><product:open-end>false</product:open-end><product:paper> <product:document-number> </product:document-number><product:book> </product:book><product:page> </product:page><product:date-signed>2018-12-13</product:date-signed><product:date-recorded>2018-12-13</product:date-recorded><product:date-presented>2018-12-13</product:date-presented></product:paper><product:comments> </product:comments></product:mortgage><product:mortgage> <product:mortgagors> <product:mortgagor>TEST </product:mortgagor></product:mortgagors><product:mortgagees> <product:mortgagee> <product:name>TEST</product:name></product:mortgagee></product:mortgagees><product:amount>0.00</product:amount><product:open-end>false</product:open-end><product:paper> <product:document-number> </product:document-number><product:book> </product:book><product:page> </product:page><product:date-signed>2018-12-13</product:date-signed><product:date-recorded>2018-12-13</product:date-recorded><product:date-presented>2018-12-13</product:date-presented></product:paper><product:comments>TEST</product:comments></product:mortgage></product:mortgages><product:legal-descriptions> <product:legal-description>ALL THAT CERTAIN LOT, PIECE OR PARCEL OF LAND, WITH THE BUILDINGS AND IMPROVEMENTS THEREON ERECTED, SITUATE, LYING AND BEING IN THE BOROUGH OF HO-HO-KUS, IN THE COUNTY OF BERGEN, STATE OF NEW JERSEY:
+
+BEGINNING AT A POINT IN THE WESTERLY LINE OF WEST SADDLE RIVER ROAD DISTANT THEREIN 200 FEET SOUTHERLY FROM THE POINT OF INTERSECTION OF THE WESTERLY LINE OF WEST SADDLE RIVER ROAD AND THE SOUTHERLY LINE OF RIVERVIEW LANE IF THE AFORESAID LINE WAS EXTENDED TO FORM SUCH POINT OF INTERSECTION; FROM THENCE RUNNING
+
+1. ALONG THE WESTERLY LINE OF WEST SADDLE RIVER ROAD SOUTH 14 DEGREES 21 MINUTES 15 SECONDS EAST 103.60 FEET TO A POINT; THENCE
+
+2. STILL ALONG THE WESTERLY LINE OF WEST SADDLE RIVER ROAD SOUTH 16 DEGREES 4 MINUTES 15 SECONDS EAST 96.40 FEET TO A POINT; THENCE
+
+3. NORTH 66 DEGREES 35 MINUTES WEST 114.44 FEET TO A POINT; THENCE
+
+4. SOUTH 28 DEGREES 25 MINUTES WEST 125 FEET TO A POINT; THENCE
+
+5. NORTH 66 DEGREES 35 MINUTES WEST 124.29 FEET TO A POINT; THENCE
+
+6. NORTH 0 DEGREES 38 MINUTES 15 SECONDS WEST 208.05 FEET TO A POINT; THENCE
+
+7. NORTH 89 DEGREES 21 MINUTES 45 SECONDS EAST 229.58 FEET TO THE WESTERLY LINE OF WEST SADDLE RIVER ROAD, AT THE POINT AND PLACE OF BEGINNING.
+
+ALSO INCLUDING THE FOLLOWING DESCRIBED PARCEL FROM DEED BOOK 5825, PAGE 246:
+
+BEGINNING AT A POINT IN THE NORTHWESTERLY CORNER OF LANDS OF LOUIS POLICASTRO, JR. ET UX, BEING ALSO IN A CORNER OF LOT 1 ON A MAP ENTITLED 'MAP OF RIVERVIEW HOMES, HO-HO-KUS, N.J.' FILED IN THE BERGEN COUNTY CLERK'S OFFICE MARCH 8, 1951 AS MAP NO. 4077, AND BEING MORE PARTICULARLY BOUNDED AND DESCRIBED AS FOLLOWS:
+
+1. SOUTH 66 DEGREES 35 MINUTES 00 SECONDS EAST ALONG THE DIVIDING LINE BETWEEN LANDS OF THE SAID LOUIS POLICASTRO, JR. ET UX AND THE SOUTHERLY LINE OF SAID LOT 1 ON THE ABOVE MENTIONED MAP A DISTANCE OF 31.54 FEET TO A POINT IN SAID LINE, RETURNING TO THE POINT OF BEGINNING AND RUNNING; THENCE
+
+2. SOUTH 23 DEGREES 25 MINUTES 00 SECONDS WEST ALONG THE DIVIDING LINE BETWEEN LANDS OF THE SAID LOUIS POLICASTRO, JR., ET UX AND THE EASTERLY LINE OF SAID LOT 1 ON THE ABOVE MENTIONED MAP A DISTANCE OF 26.10 FEET TO A POINT IN SAID LINE; THENCE 
+
+3. NORTH 73 DEGREES 48 MINUTES 37 SECONDS EAST ACROSS SAID LANDS OF LOUIS POLICASTRO, JR., ET UX A DISTANCE OF 40.94 FEET TO A POINT AND THE END OF THE FIRST COURSE HEREIN RUN.
+
+EXCEPTING OUT AND THEREFROM THE ABOVE THE LAND DESCRIBED IN DEED BOOK 5825, PAGE 243:
+
+BEGINNING AT A POINT IN THE SOUTHEASTERLY CORNER OF LOT 1 ON A MAP ENTITLED 'MAP OF RIVERVIEW HOMES, HO-HO-KUS, N.J.' FILED IN THE BERGEN COUNTY CLERK'S OFFICE ON MARCH 8, 1951 AS MAP NO. 4077 SAID POINT BEING IN THE WESTERLY LINE OF WEST SADDLE RIVER ROAD AS NOW LAID OUT AND USED, SAID LAST MENTIONED POINT BEING DISTANT 25.00 FEET SOUTHWESTERLY AND AT RIGHT ANGLES FROM THE CENTER LINE THEREOF; THENCE FROM SAID POINT OF BEGINNING RUNNING
+
+1. NORTH 66 DEGREES 35 MINUTES 00 SECONDS WEST ALONG THE DIVIDING LINE BETWEEN SAID LOT 1 AND THE LINE OF LANDS OF LOUIS POLICASTRO, JR. ET UX A DISTANCE OF 82.42 FEET TO A POINT IN THE SAME; THENCE
+
+2. NORTH 73 DEGREES 48 MINUTES 37 SECONDS EAST ACROSS SAID LOT 1 A DISTANCE OF 46.56 FEET TO A POINT AND CORNER, THENCE 
+
+3. SOUTH 34 DEGREES 03 MINUTE</product:legal-description><product:legal-description>S 29 SECONDS EAST ACROSS SAID LOT 1 A DISTANCE 55.20 FEET TO A POINT IN THE SAID SOUTHEASTERLY CORNER OF LOT 1 BEING ALSO THE WESTERLY LINE OF WEST SADDLE RIVER ROAD AND THE POINT OR PLACE OF BEGINNING.
+
+EXCEPTING OUT AND THEREFROM THE ABOVE THE LAND DESCRIBED IN DEED BOOK 8429, PAGE 636:
+
+BEGINNING AT A POINT IN THE WESTERLY SIDELINE OF WEST SADDLE RIVER ROAD (50 FEET WIDE), SAID POINT BEING THE FOLLOWING COURSES AND DISTANCES FROM THE INTERSECTION OF THE WESTERLY SIDELINE OF WEST SADDLE RIVER ROAD AND THE SOUTHERLY SIDELINE OF RIVERVIEW LANE (50 FEET WIDE); 
+
+A. SOUTH 14 DEGREES 21 MINUTES 15 SECONDS EAST, ALONG THE WESTERLY SIDELINE OF WEST SADDLE RIVER ROAD, A DISTANCE OF 303.60 FEET TO A POINT; THENCE
+ 
+B. SOUTH 16 DEGREES 04 MINUTES 15 SECONDS EAST, STILL ALONG THE SAME WESTERLY SIDELINE OF WEST SADDLE RIVER ROAD, A DISTANCE OF 44.93 FEET TO THE PRINCIPLE POINT AND PLACE OF BEGINNING; THENCE
+
+1. SOUTH 16 DEGREES 04 MINUTES 15 SECONDS EAST, ALONG THE WESTERLY SIDELINE OF WEST SADDLE RIVER ROAD, A DISTANCE OF 51.47 FEET TO POINT; THENCE 
+
+2. NORTH 34 DEGREES 03 MINUTES 32 SECONDS WEST ALONG THE EXISTING NORTHEASTERLY PROPERTY LINE OF LOT 7, BLOCK 305 AS SHOWN ON THE CURRENT TAX MAP OF THE BOROUGH OF HO-HO-KUS, A DISTANCE OF 55.21 FEET TO A POINT; THENCE 
+
+3. SOUTH 73 DEGREES 48 MINUTES 37 SECONDS WEST ALONG THE EXISTING NORTHERLY PROPERTY LINE OF LOT 7, BLOCK 305 AS SHOWN ON THE CURRENT TAX MAP OF THE BOROUGH OF HO-HO-KUS, A DISTANCE OF 87.50 FEET TO A POINT; THENCE 
+
+4. SOUTH 23 DEGREES 25 MINUTES 00 SECONDS WEST ALONG THE EXISTING NORTHWESTERLY PROPERTY LINE OF LOT 7, BLOCK 305 AS SHOWN ON THE CURRENT TAX MAP OF THE BOROUGH OF HO-HO-KUS, A DISTANCE OF 98.90 FEET TO A POINT; THENCE
+
+5. NORTH 66 DEGREES 35 MINUTES 00 SECONDS WEST ALONG THE EXISTING SOUTHERLY PROPERTY LINE OF LOT 6 BLOCK 305 AS SHOWN ON THE CURRENT TAX MAP OF THE BOROUGH OF HO-HO-KUS AND THE EXISTING NORTHERLY LINE OF LOT 9 BLOCK 305 AS SHOWN ON THE CURRENT TAX MAP OF THE BOROUGH OF HO-HO-KUS, A DISTANCE OF 11.46 FEET TO A POINT; THENCE
+
+
+TAX ID: BLOCK 305 LOT 6.</product:legal-description></product:legal-descriptions><product:miscellaneous-information> <product:miscellaneous>TYPING MISCELLANEOUS NOTES</product:miscellaneous></product:miscellaneous-information><product:search-comments/></search-data></product-reply></search>

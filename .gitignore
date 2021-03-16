@@ -1,0 +1,11 @@
+.well-known/
+/Templates/Pdf/
+/application/logs/
+uploads/
+logs/
+S3_uploads/
+/OCR/vendor/
+vendor/
+composer.json
+composer.lock
+

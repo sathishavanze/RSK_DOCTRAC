@@ -1,0 +1,87 @@
+			<div class="">
+				<button type="button" class="btn btn-facebook btn-social btn-sm" onClick="PreviewExcel();">Excel</button>
+				<span class="badge badge-pill pull-right" style="background-color: #757575;">Invalid</span>
+				<span class="badge badge-pill pull-right" style="background-color: #ff04ec;">Duplicate LoanNumber</span>
+				<span class="badge badge-pill pull-right" style="background-color: #ff0013;">Not Available</span>
+				<span class="badge badge-pill pull-right" style="background-color: #795548;">Workflow is not available</span>
+				<span class="badge badge-pill pull-right" style="background-color: #9575cd;">Borrower is not matched</span>
+				<!-- <span class="badge badge-pill pull-right" style="background-color: #ffc107;">Milestone is not matched</span> -->
+				<span class="badge badge-pill pull-right" style="background-color: #2196f3;">LoanType is not matched</span>
+				<!-- <span class="badge badge-pill pull-right" style="background-color: #ff9800;">Workflow is already enabled</span> -->
+				<!-- <span class="badge badge-pill pull-right" style="background-color: #4caf50;">Workflow is already completed</span> -->
+				<span class="badge badge-pill pull-right" style="background-color: #607d8b;">Workup Enable Error</span>
+			</div>
+
+			<div class="">
+				<div class="defaultfontsize">
+					<table class="table table-striped table-hover table-format nowrap datatable"  id="table-bulkorder">
+						<thead>
+							<tr>
+								<?php 	
+
+								foreach ($headingsArray as $key => $value) {
+									?><th><?php echo $value; ?></th><?php
+								}
+
+								?>
+
+							</tr>
+						</thead>
+						<tbody>
+
+
+						</tbody>
+
+					</table>
+				</div>
+			</div>
+<script type="text/javascript">
+	
+	function PreviewExcel() {
+		
+
+		$.ajax({
+			type: "POST",
+			url: 'Orderentry/outputPreviewExcel',
+			xhrFields: {
+				responseType: 'blob',
+			},
+			beforeSend: function(){
+
+
+			},
+			success: function(data)
+			{
+				var filename = "BulkWorkflowEnable_Preview.xlsx";
+				if (typeof window.chrome !== 'undefined') {
+							//Chrome version
+							var link = document.createElement('a');
+							link.href = window.URL.createObjectURL(data);
+							link.download = "BulkWorkflowEnable_Preview.xlsx";
+							link.click();
+						} else if (typeof window.navigator.msSaveBlob !== 'undefined') {
+							//IE version
+							var blob = new Blob([data], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+							window.navigator.msSaveBlob(blob, filename);
+						} else {
+							//Firefox version
+							var file = new File([data], filename, { type: 'application/octet-stream' });
+							window.open(URL.createObjectURL(file));
+						}
+					},
+					error: function (jqXHR, textStatus, errorThrown) {
+
+						console.log(jqXHR);
+
+
+					},
+					failure: function (jqXHR, textStatus, errorThrown) {
+
+						console.log(errorThrown);
+
+					},
+				});
+
+
+	}
+</script>

@@ -1,0 +1,319 @@
+$body = $("body"),
+$portletIdentifier = ".card",
+$portletCloser = '.card a[data-toggle="remove"]',
+$portletRefresher = '.card a[data-toggle="reload"]'
+
+function triggerpage(url){
+	window.location.href = url;
+}
+
+function buttonspinner(){
+	return '<i class="fa fa-spin fa-spinner"></i> ';
+}
+
+/*--- GENERAL FUNCTIONS ---*/
+function callselect2(){
+	$("select.select2picker").select2({
+		//tags: false,
+		theme: "bootstrap",
+	});
+}
+
+function callselect2byclass(byclass){
+	$('.'+byclass).select2({
+		//tags: false,
+		theme: "bootstrap",
+	});
+}
+
+function callselect2byid(byid){
+	$('#'+byid).select2({
+		//tags: false,
+		theme: "bootstrap",
+	});
+}
+
+function parselyvalidate_init()
+{
+	if ( $.isFunction($.fn.parsley) ) {
+		//init validation
+
+		$('.validate-form').parsley();
+	}
+}
+
+function init_select2()
+{
+	if ( $.isFunction($.fn.select2) ) {
+		
+		$('[data-toggle="select2"]').select2();
+
+		$('[data-toggle="select2"]').change(function() {
+			$(this).parsley().validate();
+		}); 
+	}
+}
+
+function init_daterangepicker()
+{
+	if ( $.isFunction($.fn.datepicker) ) {
+		
+		$(".date-range").datepicker({
+			toggleActive: !0,
+			format: "mm/dd/yyyy",
+			autoclose:!0,
+			//todayHighlight:!0
+		})
+	}
+}
+
+function init_datetimepicker()
+{
+	if ( $.isFunction($.fn.datepicker) ) {
+		
+		$(".date-range").datepicker({
+			toggleActive: !0,
+			format: "mm/dd/yyyy",
+			autoclose:!0,
+			//todayHighlight:!0
+		})
+	}
+}
+
+function init_datepicker()
+{
+	if ( $.isFunction($.fn.datepicker) ) {
+		
+		$(".datepicker-autoclose").datepicker({
+			autoclose: !0,
+			todayHighlight: !0,
+			format: "mm/dd/yyyy",
+		})
+	}
+}
+
+function init_mask()
+{
+	$('[data-toggle="input-mask"]').each(function(a,e){var t=$(e).data("maskFormat"),n=$(e).data("reverse");null!=n?$(e).mask(t,{reverse:n}):$(e).mask(t)})
+}
+
+function loader_element()
+{
+	return '<div class="card-disabled loader_element"><div class="card-portlets-loader"><div class="double-bounce1"></div><div class="double-bounce2"></div></div></div>';
+}
+
+/*FUNCTION FOR SPINNER*/
+var spinner = loader_element();
+var overlaydiv  = '<div class="overlay d2tspinner-overlay"></div>';
+
+function addcardspinner(ele){
+	var $portlet = $(this).closest($portletIdentifier);
+	// This is just a simulation, nothing is going to be reloaded
+	$portlet.append(loader_element());
+}	
+
+function dashboardaddcardspinner(ele){
+	var $portlet = $(this).closest($portletIdentifier);
+	// This is just a simulation, nothing is going to be reloaded
+	$portlet.append(loader_element());
+}	
+
+function removecardspinner(ele){
+
+	var $portlet = $(this).closest($portletIdentifier);
+	var $pd = $portlet.find('.card-disabled');
+	setTimeout(function () {
+		$pd.fadeOut('fast', function () {
+			$pd.remove();
+		});
+	}, 500 + 300 * (Math.random() * 5));
+}
+
+function dashboardremovecardspinner(ele){
+	$('.d2tspinner-circular').remove();
+	$('.overlay').remove();
+	$(ele).closest(".card .btn").removeClass("reduceindex");
+}
+
+
+var bodyoverlaydiv = "<div class='bodyoverlaydiv'></div>"; 
+
+function addbodyspinner(){
+	$("body").append(loader_element());
+	$("body").append(bodyoverlaydiv);
+}
+
+function removebodyspinner(){
+	$('.bodyspinner_svg').remove();
+	$('.bodyoverlaydiv').remove();
+}
+
+
+
+function openNewBackgroundTab(redirecturl){
+	var a = document.createElement("a");
+	a.href = redirecturl;
+	var evt = document.createEvent("MouseEvents");
+	//the tenth parameter of initMouseEvent sets ctrl key
+	evt.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0,
+		true, false, false, false, 0, null);
+	a.dispatchEvent(evt);
+}
+
+function open_backgroundtab(redirecturl){
+	var is_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
+	if(!is_chrome)
+	{
+		window.open(redirecturl, '_blank');
+	} else {
+		openNewBackgroundTab(redirecturl);
+	}
+}
+
+
+function getFormattedDate(date) {
+	var year = date.getFullYear();
+
+	var month = (1 + date.getMonth()).toString();
+	month = month.length > 1 ? month : '0' + month;
+
+	var day = date.getDate().toString();
+	day = day.length > 1 ? day : '0' + day;
+
+	return month + '/' + day + '/' + year;
+}
+
+var lastValue = $('#adv_CustomerUID').val();
+$(document).on('change','#adv_CustomerUID',function(event){
+	var ele = $(this);
+	var adv_CustomerUID = ele.val();
+
+	Swal.fire({
+		text: "Would you like to change the client?",
+		type: 'info',
+		showCancelButton: !0,
+		confirmButtonClass: 'btn btn-success waves-effect width-md waves-light mt-2',
+		cancelButtonClass: 'btn btn-danger waves-effect width-md waves-light ml-2 mt-2',
+		confirmButtonText: "Yes, change it!",
+		cancelButtonText: "No, cancel!",
+		buttonsStyling: !1,
+		showLoaderOnConfirm: true,
+		preConfirm: function() {
+			return new Promise(function(resolve, reject) {
+				if(adv_CustomerUID == ''){
+					ele.closest('.form-group').removeClass('has-success').addClass('has-danger is-focused');
+					reject('Please select client');
+				}else{
+					$.ajax({
+						type: "POST",
+						url :base_url+"Profile/setDefaultClient",
+						data:{'adv_CustomerUID':adv_CustomerUID},
+						success: function(data)
+						{
+							var obj = $.parseJSON( data );
+							if(obj.DefaultScreen != null && obj.DefaultScreen != '') {
+								window.location.href = base_url + obj.DefaultScreen;
+							} else {
+								window.location.href = base_url;
+							}
+
+						}
+					});
+				}
+			});
+		}
+	}).then(function(t) {
+		t.dismiss && (t.dismiss == 'cancel' || t.dismiss == 'backdrop') ?  $("#adv_CustomerUID").val(lastValue).trigger('change.select2') : '';
+	}).catch(swal.noop);
+});
+
+
+function fn_commondatatable(tableselector,ReportName='file')
+{
+
+	fndatatable = $(tableselector).DataTable( {
+		scrollX:        true,
+		scrollCollapse: true,
+		fixedHeader: false,
+		scrollY: '100vh',
+		paging:  true,
+		searchDelay:1500,
+		//"bInfo" : false,
+		"bDestroy": true,
+		"autoWidth": true,
+		"processing": true, //Feature control the processing indicator.
+		"serverSide": false, //Feature control DataTables' server-side processing mode.
+		"order": [], //Initial no order.
+		"pageLength": 10, // Set Page Length
+		"lengthMenu":[[10, 25, 50, 100], [10, 25, 50, 100]],
+		fixedColumns: {
+			leftColumns: 1,
+			rightColumns: 1
+		},
+		dom: 'lBfrtip',
+		"buttons": [
+		{
+			extend: 'csv',
+			title: ReportName,
+		},
+		{
+			extend: 'excelHtml5',
+			title: ReportName,
+			footer: true,
+		},
+		],
+
+		language: {
+			processing: '<svg class="d2tspinner-circular" viewBox="25 25 50 50"><circle class="d2tspinner-path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/></svg>',
+
+		},
+		"columnDefs": [ {
+			"targets": 'no-sort',
+			"orderable": false,
+		} ],
+	});
+
+	return fndatatable;
+}
+
+
+
+//clear previous datatable request
+$(function() {
+	$('table').on('preXhr.dt', function ( e, settings, data ) {
+		if (settings.jqXHR) settings.jqXHR.abort();
+	})
+});
+
+
+//datatable loader 
+$(document).off('.dataTable processing.dt').on('.dataTable processing.dt', function (e, settings, processing) {
+	//$('.dataTables_processing').css('display', 'none');
+	$(e.target).closest('.dataTables_wrapper').find('.loader_element').remove();
+
+	if (processing) {
+		$(e.target).closest('.dataTables_wrapper').append(loader_element());
+	} else {
+		$(e.target).closest('.dataTables_wrapper').find('.loader_element').remove();
+	}
+})
+
+jQuery(document).ready(function() {	
+
+	//init select2
+	init_select2();
+	
+	//init datepicker
+	init_datepicker(),init_daterangepicker();
+
+	//init parsely validation
+	parselyvalidate_init();
+
+	//init switch for checkbox
+	$('[data-plugin="switchery"]').each(function(a, n) {
+		new Switchery($(this)[0], $(this).data())
+	});
+
+
+
+})

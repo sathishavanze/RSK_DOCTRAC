@@ -1,0 +1,79 @@
+			<div class="">
+				<button type="button" class="btn btn-facebook btn-social btn-sm" onClick="PreviewExcel();">Excel</button>
+				<span class="badge badge-pill pull-right" style="background-color: #757575;">Invalid</span>
+				<span class="badge badge-pill pull-right" style="background-color: #ff04ec;">Loan Number</span>
+			</div>
+
+			<div class="">
+				<div class="defaultfontsize">
+					<table class="table table-striped table-hover table-format nowrap datatable"  id="table-bulkorder">
+						<thead>
+							<tr>
+								<?php 	
+
+								foreach ($headingsArray as $key => $value) {
+									?><th><?php echo $value; ?></th><?php
+								}
+
+								?>
+
+							</tr>
+						</thead>
+						<tbody>
+
+
+						</tbody>
+
+					</table>
+				</div>
+			</div>
+<script type="text/javascript">
+	
+	function PreviewExcel() {
+		
+
+		$.ajax({
+			type: "POST",
+			url: 'Orderentry/outputPreviewExcel',
+			xhrFields: {
+				responseType: 'blob',
+			},
+			beforeSend: function(){
+
+
+			},
+			success: function(data)
+			{
+				var filename = "BulkPreview.xlsx";
+				if (typeof window.chrome !== 'undefined') {
+							//Chrome version
+							var link = document.createElement('a');
+							link.href = window.URL.createObjectURL(data);
+							link.download = "BulkPreview.xlsx";
+							link.click();
+						} else if (typeof window.navigator.msSaveBlob !== 'undefined') {
+							//IE version
+							var blob = new Blob([data], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+							window.navigator.msSaveBlob(blob, filename);
+						} else {
+							//Firefox version
+							var file = new File([data], filename, { type: 'application/octet-stream' });
+							window.open(URL.createObjectURL(file));
+						}
+					},
+					error: function (jqXHR, textStatus, errorThrown) {
+
+						console.log(jqXHR);
+
+
+					},
+					failure: function (jqXHR, textStatus, errorThrown) {
+
+						console.log(errorThrown);
+
+					},
+				});
+
+
+	}
+</script>
